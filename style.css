@@ -1,0 +1,20 @@
+button:hover {
+  cursor: pointer;
+}
+
+#jokeCards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border: 1px solid black;
+  margin: 0.5rem;
+  padding: 0 1rem;
+  width: 25rem;
+}
+
+.card:not(.expanded) p {
+  display: none;
+}
