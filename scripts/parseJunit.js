@@ -6,6 +6,7 @@ const { notifyFail, notifyPass } = require("./notifySlack");
 const repoName = process.argv[2];
 const webhookUrl = process.argv[3];
 const username = process.argv[4] || "default user";
+console.log({ repoName, webhookUrl, username });
 
 let numSuites = 0;
 const passedSuites = [];
