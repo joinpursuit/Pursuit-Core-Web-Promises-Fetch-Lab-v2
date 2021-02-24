@@ -14,10 +14,14 @@
 
 ## 1. MVP
 
+Use the [Official Joke API](https://github.com/15Dkatz/official_joke_api) and `fetch` to build the site described below:
+
 - A list of ten jokes that are randomly loaded when the page is refreshed, each with the `"card"` class
 - Clicking on a joke card should expand it and reveal the punchline
 - Clicking on it again should contract it and hide the punchline
-- A button with id `"reload"` that refreshes clears all the jokes on the screen and loads new random ones
+- A button with id `"reload"` that clears all the jokes on the screen and loads new random ones
+
+![Recording of refreshing and then clicking some jokes tiles](https://user-images.githubusercontent.com/3335181/108989743-ef167b80-7663-11eb-8ee8-a1e4d34cc960.gif)
 
 ## 2. Bonus
 

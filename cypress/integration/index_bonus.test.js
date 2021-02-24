@@ -29,9 +29,7 @@ describe("Bonus", () => {
     });
   });
 
-  it.only("does not show repeat jokes", () => {
-    // https://github.com/cypress-io/cypress/issues/9302
-    let requestCount = 0;
+  it("does not show repeat jokes", () => {
     cy.intercept("https://official-joke-api.appspot.com/jokes/programming/ten", (request) => {
       request.reply([
         {
@@ -41,6 +39,8 @@ describe("Bonus", () => {
       ]);
     });
 
+    // We change the category endpoint to avoid a Cypress bug around not being able to duplicate requests.
+    // https://github.com/cypress-io/cypress/issues/9302
     cy.get("select").select("programming");
 
     cy.intercept("https://official-joke-api.appspot.com/jokes/general/ten", (request) => {

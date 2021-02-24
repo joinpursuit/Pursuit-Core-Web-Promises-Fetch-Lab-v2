@@ -36,7 +36,7 @@ describe("Index", () => {
       });
   });
 
-  it("reloads new jokes when the reloader is clicked", () => {
+  it("reloads new jokes when the reloader is clicked", { retries: 2 }, () => {
     let originalTitle;
     cy.get(".card")
       .first()
