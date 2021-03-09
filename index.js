@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 .then(response =>{
     return response.json()
 }).then(body =>{
-    const random = body.setup.
+    const random = body.setup
     let sec = body.punchline
     const ul = document.querySelector('ul')
     console.log(random)
