@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', eve => {
   eve.preventDefault()
-  console.log('Initializing...')
   loadJokes()
 })
 
@@ -14,7 +13,7 @@ function loadJokes () {
       for (jok of body) {
         const forms = document.createElement('div')
         forms.className = 'card'
-        const inputJoke = document.createElement('button')
+        const inputJoke = document.createElement('span')
         inputJoke.className = 'setup'
         inputJoke.textContent = jok.setup
         forms.appendChild(inputJoke)
@@ -29,9 +28,6 @@ function loadJokes () {
 
         inputJoke.addEventListener('click', eve => {
           eve.preventDefault()
-
-          console.log('whatt')
-
           if (jokeJoke.style.visibility === 'hidden') {
             jokeJoke.style.visibility = 'visible'
           } else {

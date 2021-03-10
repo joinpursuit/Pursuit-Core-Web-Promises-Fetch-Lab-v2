@@ -8,8 +8,6 @@
   border: solid 1px black;
   margin: 5px;
   padding: 5px;
-  font-size: 16px;
-  min-height: 40px;
   align-content: center;
 
   display: grid;
@@ -19,21 +17,21 @@
 .setup {
   margin: 5px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 24px;
   min-height: 65px;
   text-align: center;
   align-content: center;
   background-color: white;
   border-style: none;
   border-color: white;
+  font-weight: bolder;
 }
 
 .punchline {
-  margin: 5px;
-  padding: 5px;
-  font-size: 16px;
-  min-height: 35px;
   text-align: center;
-  align-content: center;
-  flex-flow: column wrap;
+  min-height: 35px;
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+  word-wrap: break-word;
 }
