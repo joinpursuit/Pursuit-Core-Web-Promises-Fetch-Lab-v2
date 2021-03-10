@@ -1,23 +1,36 @@
-
-body{
-    display: flex;
-    flex-wrap: wrap;
+#space{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3px
 }
 .card{
+    padding: 5px;
+    border: 1px solid black;
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    gap: 5px;  
-    
-    
+    text-align: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 60% 47%   
+   
 }
 #reload{
     margin-left: 10px;
     margin-bottom: 10px;
 }
-.one{
-    border: 2px solid black ;
+.setup{display: flex;
+    font-size: px;
+    text-align: center;
+    min-height: 40px;
+    flex-wrap: wrap
 }
+.punchline{
+    display: flex;
+    padding: 4px;
+    text-align: center;
+    min-height: 25px;
+    flex-wrap: wrap
+}
+
 @media screen and(max-width:800px){
     body{
         width: 100%;
