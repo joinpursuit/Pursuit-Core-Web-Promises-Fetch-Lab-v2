@@ -1,0 +1,60 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  } 
+
+  .setup {
+  color: darkgreen;
+  background-color: gold;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+  min-height: 60px;
+  text-align: center;
+  align-content: center;
+}
+
+  .card {
+    display: grid;
+    border: solid 2px firebrick;
+    color: darkgreen;
+    background-color: rgb(89, 248, 227);
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+    min-height: 40px;
+    align-content: center; 
+  }
+
+  .punchline {
+    color: darkgreen;
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+    min-height: 60pdx;
+    text-align: center;
+    align-content: center;
+    flex-flow: column wrap;
+  }
+
+  h1 {
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: darkred;
+  }
+
+  button {
+      margin: 5px;
+      border-radius: 10px;
+      border-color: firebrick;
+      color: rgb(9, 134, 30);
+      background-color: gold;
+  }
+
+  body {
+      background-color: rgb(40, 123, 218);
+  }
+
+  #loading {
+      color: firebrick;
+  }
