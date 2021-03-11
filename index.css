@@ -1,35 +1,47 @@
+body{
+    background-color: rgba(0, 0, 255, 0.582);
+}
 #space{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 3px
+    grid-template-rows: repeat(4, 1fr);
+   
 }
 .card{
     padding: 5px;
     border: 1px solid black;
-    display:grid;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 20%;
+    opacity: 1;
+    background-color: aqua;
+    display:grid; 
     text-align: center;
     grid-template-columns: 100%;
-    grid-template-rows: 60% 47%   
-   
-}
-#reload{
+    grid-template-rows: 60% 47% 
+} 
+ #reload{
     margin-left: 10px;
     margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0.363);
 }
-.setup{display: flex;
-    font-size: px;
+.setup{
+   padding: 4px;
+    font-size: 15px;
     text-align: center;
     min-height: 40px;
-    flex-wrap: wrap
+    align-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    
+   
 }
 .punchline{
-    display: flex;
     padding: 4px;
     text-align: center;
-    min-height: 25px;
-    flex-wrap: wrap
-}
+    flex-wrap: wrap;
+    font-size: 15px;
+} 
 
 @media screen and(max-width:800px){
     body{
@@ -37,4 +49,4 @@
         min-width: 200px;
         max-width: 300px;
     }
-}
+} 
