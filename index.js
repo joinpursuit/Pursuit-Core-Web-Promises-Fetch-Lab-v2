@@ -1,27 +1,37 @@
 const header = document.getElementById('header')
-const p = document.createElement('p')
-const li = document.createElement('li')
-const ul = document.createElement('ul')
+const ul = document.querySelector('ul')
+const btn = document.getElementById('btn')
 
 header.textContent = 'Jokes!'
 
-const grab = fetch('https://official-joke-api.appspot.com/random_ten').then(response => response.json())
-    .then(obj => {
-        let jokes = {}
-        // console.log(jokes)
-        for (let each of obj) {            
-            jokes = { ...each }
-            return jokes
-            // console.log(jokes)
-        }     
+const grab = () => {
+    fetch('https://official-joke-api.appspot.com/random_ten').then(response => response.json())
+    .then(jokes => {            
+        for (let joke of jokes) {            
+            let card = joke.setup
+            let punchline = joke.punchline
+            const li = document.createElement('li')
+            li.textContent = card
+            const p = document.createElement('p')
+            ul.appendChild(li)
+            li.addEventListener('click', () => {
+                // p.textContent = punchline
+                li.appendChild(p)
+                if (p.textContent !== punchline) {
+                    p.textContent = punchline
+                } 
+                else {
+                    p.textContent = ''
+                }
+            })
+            console.log(`${card}  & ${punchline}`)$
+        }
     })
-    .then(jokes => {
-        console.log(jokes)        
-        let card = jokes.setup
-        let punchline = jokes.punchline
-        console.log(card)
-        console.log(punchline)
-})
+}
+
+btn.addEventListener('click', grab)
+
+
 
 
 
