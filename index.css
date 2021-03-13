@@ -1,0 +1,41 @@
+body {
+    display: grid;
+    grid-template-rows: 50px 50px 1fr;
+    background-color: hsl(0, 25%, 65%, 0.5);
+    text-align: center;
+    color: purple;
+}
+
+
+main{
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+
+
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color: slateblue;
+    color: ivory;
+    font-weight: 700;
+}
+
+.card{
+    border: slateblue solid 2px;
+    padding: 5px;
+    border-radius: 8px;
+    width: 200px;
+    margin: 5px;
+   
+}
+
+.answer{
+    color: blueviolet
+}
