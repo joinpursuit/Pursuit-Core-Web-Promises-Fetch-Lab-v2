@@ -8,7 +8,7 @@ const body = document.querySelectorAll("body");
 let p = document.querySelectorAll("p");
 let punch = document.querySelectorAll("h5");
 
-
+const option = document.createElement("option");
 const test = document.querySelector("h1");
 
 button.addEventListener("click", (e) => {
@@ -59,9 +59,9 @@ button.addEventListener("click", (e) => {
 
 // card is an array
 section.addEventListener("click", (e) => {
-    debugger
+   
     const punchline = document.querySelector(".punchline")
-    if (e.target.className === "card") {
+    if (e.target.className === "punchline") {
         e.target.style.visibility = "visible";
 		}
    
@@ -78,3 +78,6 @@ section.addEventListener("click", (e) => {
 // cardList.addEventListener("click", (e) => {
 // 	h5.style.visibility = visible;
 // });
+
+// Have a select at the top for either 
+// general, random, or programming and only load jokes of that type
