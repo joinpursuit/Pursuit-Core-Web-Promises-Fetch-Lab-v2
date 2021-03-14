@@ -6,9 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadJokes = () =>{
         fetch('https://official-joke-api.appspot.com/random_ten')
         .then(res => {
-
             if(!res.ok){
-                throw Error('Something went wrong')
+                throw Error('Something went wrong');
             }
             section.innerHTML = "";
             return res.json();
@@ -18,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.add('card');
                 card.textContent = res[i].setup;
                 section.appendChild(card);
-                const punchline = document.createElement("span")
-                punchline.classList.add('punchline')
+                const punchline = document.createElement("span");
+                punchline.classList.add('punchline');
                 punchline.textContent = res[i].punchline;
                 card.appendChild(punchline);
-                punchline.style.visibility = 'hidden'
+                punchline.style.visibility = 'hidden';
                 card.addEventListener("click", () => {
                     if(punchline.style.visibility === 'hidden') {
                         punchline.style.visibility = 'visible';
