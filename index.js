@@ -15,8 +15,10 @@ const jokes = () => {
             const li = document.createElement("li");
             li.classList.add("joke")
             li.textContent = joke.setup;
-            
+
             const p = document.createElement("p")
+            p.style.display = "none"
+
             p.classList.add("punchline")
             p.textContent=joke.punchline
             ul.appendChild(li)
@@ -25,10 +27,10 @@ const jokes = () => {
             console.log(joke);
             
             ul.addEventListener("click", (e) => {
-                if(p.style.visibility === "hidden") {
-                    p.style.visibility = "visible"
+                if(p.style.display === "block") {
+                    p.style.display = "none"
                 } else {
-                    p.style.visibility = "hidden"
+                    p.style.display = "block"
                 }
             })
         })
