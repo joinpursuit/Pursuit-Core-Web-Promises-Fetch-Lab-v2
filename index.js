@@ -18,37 +18,46 @@
 // - Make a pull request on github.
 // - Submit the link to your pull request on Canvas.
 
-const fetchJokes = ()=>{
-    fetch(`https://official-joke-api.appspot.com/random_ten`)
-.then((res) => {
-    if (!res.ok) {
+const fetchJokes = () => {
+  fetch(`https://official-joke-api.appspot.com/random_ten`)
+    .then((res) => {
+      if (!res.ok) {
         throw Error("Something went wrong, status " + res.status);
-    }
-    return res.json();
-}).then((res)=>{
-    let allJokes = document.querySelector('#all-jokes')
-    allJokes.innerHTML = ""
-    res.forEach((joke)=>{
-      const oneJokeDiv = document.createElement('div')
-        oneJokeDiv.class = 'card'
-        oneJokeDiv.id = 'cardie'
-        oneJokeDiv.textContent = joke.setup 
-        allJokes.appendChild(oneJokeDiv)
-        oneJokeDiv.addEventListener('click',(event)=>{
-            oneJokeDiv.textContent = joke.setup + '\n'+ '\n'+
-       joke.punchline
-       oneJokeDiv.style.height = '120px'
-        })
+      }
+      return res.json();
     })
-})
-}
+    .then((res) => {
+      let allJokes = document.querySelector("#all-jokes");
+      allJokes.innerHTML = "";
+      res.forEach((joke) => {
+        const oneJokeDiv = document.createElement("div");
+        let punchP = document.createElement("p");
+        punchP.textContent = joke.punchline;
+        oneJokeDiv.classList.add("card");
+        oneJokeDiv.textContent = joke.setup + "\n" + "\n";
+        oneJokeDiv.appendChild(punchP);
+        //punchP.style.visibility = "hidden";
 
-document.addEventListener('DOMContentLoaded', (event)=>{
-fetchJokes()
-})
+        allJokes.appendChild(oneJokeDiv);
 
-let reloadButton = document.getElementById('reload')
-reloadButton.addEventListener('click',(event)=>{
-fetchJokes()
-})
+        oneJokeDiv.addEventListener("click", (event) => {
+            if(punchP.style.visibility === 'hidden'){
+                punchP.style.visibility = "visible";
+                oneJokeDiv.style.height = "120px";
+            }else {
+                punchP.style.visibility = "hidden";
+                oneJokeDiv.style.height = "100px";
+            }
+        });
+      });
+    });
+};
 
+document.addEventListener("DOMContentLoaded", (event) => {
+  fetchJokes();
+});
+
+let reloadButton = document.getElementById("reload");
+reloadButton.addEventListener("click", (event) => {
+  fetchJokes();
+});
