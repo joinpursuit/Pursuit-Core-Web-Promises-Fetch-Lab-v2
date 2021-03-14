@@ -15,10 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
             for(let i = 0; i < res.length; i++){
                 const card = document.createElement('span');
                 card.classList.add('card');
-                card.textContent = res[i].setup;
+                const p = document.createElement("p")
+                p.classList.add('joke-line')
+                p.textContent = res[i].setup;
                 section.appendChild(card);
-                const punchline = document.createElement("span");
-                punchline.classList.add('punchline');
+                card.appendChild(p)
+                const punchline = document.createElement("p")
+                punchline.classList.add('punchline')
                 punchline.textContent = res[i].punchline;
                 card.appendChild(punchline);
                 punchline.style.visibility = 'hidden';
