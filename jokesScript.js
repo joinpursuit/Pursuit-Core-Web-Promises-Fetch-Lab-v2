@@ -1,7 +1,5 @@
 const button = document.querySelector("#reload");
 const section = document.querySelector("section");
-const card = document.querySelectorAll(".card");
-const body = document.querySelectorAll("body");
 
 let p = document.querySelectorAll("p");
 let punch = document.querySelectorAll("h5");
@@ -9,7 +7,6 @@ let punch = document.querySelectorAll("h5");
 const option = document.querySelector("option");
 const select = document.querySelector("select");
 
-const test = document.querySelector("h1");
 let selectValue = "programming"
 
 select.addEventListener("change", (e) => {
