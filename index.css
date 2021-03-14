@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+
+body {
+    background-color: lavender;
+}
+
+h1 {
+  font-family: 'Ranchers', cursive;
+  color: purple;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.setup {
+  color: pink;
+  background-color: black;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+  min-height: 60px;
+  text-align: center;
+  align-content: center;
+}
+
+.card {
+  display: grid;
+  border: solid 2px purple;
+  color: pink;
+  background-color: pink;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+  min-height: 40px;
+  align-content: center;
+}
+
+.punchline {
+  color: purple;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+  min-height: 60pdx;
+  text-align: center;
+  align-content: center;
+  flex-flow: column wrap;
+}
+
+button {
+  margin: 5px;
+  border-radius: 10px;
+  border-color: purple;
+  color: purple;
+  background-color: pink;
+}
