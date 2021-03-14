@@ -1,5 +1,4 @@
 const ul = document.querySelector("#joke-list");
-// const punchLine = [];
 
 const createJokes = () => {
   fetch("https://official-joke-api.appspot.com/random_ten")
@@ -12,31 +11,35 @@ const createJokes = () => {
     .then((res) => {
       res.forEach((joke) => {
         const li = document.createElement("li");
-        li.classList.add("card")
-        const p = document.createElement("p")
-        p.textContent = joke.punchline;
-        p.innerText.fontsize(0);
-        li.textContent = joke.setup;
         ul.appendChild(li);
-        li.appendChild(p)
-        debugger
+        li.classList.add("card");
+        const setup = document.createElement("p")
+        setup.textContent = joke.setup;
+        li.appendChild(setup)
+        const punchline = document.createElement("p");
+        punchline.textContent = joke.punchline;
+        punchline.style.display = "none";
+        punchline.classList.add("punchline")
+        li.appendChild(punchline);
+        li.addEventListener("click", (e) => {
+          if (punchline.style.display === "block") {
+            punchline.style.display = "none"
+          } else {
+            punchline.style.display = "block"
+          }
+        });
       });
     })
     .catch((err) => {
       console.log(err);
     });
-  // console.log(punchLine);
 };
 createJokes();
 
-//  ul.addEventListener("click", (e) => {
-//    const li = e.target;
-//    li.childNodes[1].innerText.fontsize(2);
 
-// li.children[0].style.fontSize = 14px
-//   //  debugger
-//   });
-  
-  
-//   @ index 1
-// innerhtml/innertextcontent
+const button = document.querySelector("button")
+button.addEventListener("click", (e) =>{
+  ul.textContent = ""
+  createJokes()
+})
+
