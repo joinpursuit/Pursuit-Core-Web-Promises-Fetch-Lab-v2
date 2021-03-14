@@ -1,5 +1,5 @@
 const button = document.querySelector("#reload");
-const section = document.querySelector("#section-card")
+const ul = document.querySelector("#section-card")
 const jokes = () => {
     fetch(`https://official-joke-api.appspot.com/jokes/ten`)
     .then(res => {
@@ -8,29 +8,30 @@ const jokes = () => {
         }
         return res.json();
     }).then(res => {
-        section.innerHTML = ""
+        ul.innerHTML = ""
         res.forEach(joke => {
-            const ul=document.createElement("ul")
-            ul.classList.add("card")
             const li = document.createElement("li");
-            li.classList.add("joke")
-            li.textContent = joke.setup;
+            li.classList.add("card")
 
-            const p = document.createElement("p")
-            p.style.display = "none"
+            const p1 =document.createElement("p")
+            p1.classList.add("joke")
+            p1.textContent=joke.setup
+            
 
-            p.classList.add("punchline")
-            p.textContent=joke.punchline
+            const p2 = document.createElement("p")
+
+            p2.classList.add("punchline")
+            p2.textContent=joke.punchline
             ul.appendChild(li)
-            li.appendChild(p)
-            section.appendChild(ul);
+            li.appendChild(p1)
+            li.appendChild(p2)
             console.log(joke);
             
-            ul.addEventListener("click", (e) => {
-                if(p.style.display === "block") {
-                    p.style.display = "none"
+            li.addEventListener("click", (e) => {
+                if(p2.style.display === "block") {
+                    p2.style.display = "none"
                 } else {
-                    p.style.display = "block"
+                    p2.style.display = "block"
                 }
             })
         })

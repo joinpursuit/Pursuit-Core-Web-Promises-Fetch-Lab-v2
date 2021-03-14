@@ -1,9 +1,9 @@
-section {
+ul {
     display: flex;
     flex-wrap: wrap;
 }
 
-ul {
+li {
     border: 2px solid black ;
     width: 200px;
     padding: 2%;
@@ -12,8 +12,9 @@ ul {
     font-weight: bold;
 }
 
-p{
+.punchline{
     font-weight: normal;
     font-size: 14px;
+    display: none;
 }
 
