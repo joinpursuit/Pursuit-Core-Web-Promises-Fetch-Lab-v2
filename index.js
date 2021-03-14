@@ -15,28 +15,23 @@ const body = document.body;
     ul.appendChild(li) 
     const li2 = document.createElement("li")
     li2.innerText = jokes.punchline
+    li.appendChild(li2)
+    li2.style.display ="none"
     li.addEventListener("click" ,(event) => {
-      li.appendChild(li2)
-      //  li2.style.visibility = "hidden"
-    
-      // if(event.target.style.visibility === "hidden"){
-      //   event.target.style.visibility ="visible"
-      // } else {
-      //   event.target.style.visibility = "hidden"
-      // }
-   
-    // li2.style.visibility = "visible"
-    
-      // if(event.target.style.visbility === "hidden"){
-      //   event.target.style.visbility ="visible"
-      // } else {
-      //   event.target.style.visbility = "hidden"
-      // }
+      if (event.target.childNodes[1].style.display === "none") {
+          event.target.childNodes[1].style.display = "block"
+      } else {
+        event.target.childNodes[1].style.display = "none"
+      }
+      // event.target.childNodes[1].style.display = "none"
+      
     })
     })
     })
     
-  
+  const refresh = () => {
+location.reload()
+  }
 
 
   
