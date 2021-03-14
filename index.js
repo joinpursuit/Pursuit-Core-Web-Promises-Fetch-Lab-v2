@@ -1,5 +1,10 @@
+const button = document.getElementById("reload");
+const container = document.getElementById("container");
+document.addEventListener("DOMContentLoaded", () => {
+  loadNewJoke();
+  button.addEventListener("click", loadNewJoke);
+});
 function loadNewJoke() {
-  const container = document.getElementById("container");
   fetch("https://official-joke-api.appspot.com/random_ten")
     .then((res) => {
       if (!res.ok) {
@@ -36,7 +41,3 @@ function loadNewJoke() {
       }
     });
 }
-
-const button = document.getElementById("reload");
-button.addEventListener("click", loadNewJoke);
-loadNewJoke();
