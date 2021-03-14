@@ -3,6 +3,7 @@ const ul = document.querySelector('ul')
 const btn = document.getElementById('btn')
 
 header.textContent = 'Jokes!'
+ul.classList.add('card')
 btn.textContent = 'More Jokes!'
 
 const grab = () => {
@@ -17,6 +18,8 @@ const grab = () => {
 
             const li = document.createElement('li')
             li.textContent = card
+            
+            
 
             const p = document.createElement('p')
             
