@@ -1,0 +1,15 @@
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top:20px;
+}
+.card{
+    border: solid 2px black; 
+    margin: 1%;   
+    padding:2%;
+    border-radius: 10px;
+    text-align: center;
+}
+.punchLine{
+    visibility: hidden;
+}
