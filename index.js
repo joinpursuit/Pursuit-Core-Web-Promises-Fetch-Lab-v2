@@ -23,12 +23,6 @@ const body = document.body;
       } else {
         event.target.childNodes[1].style.display = "none"
       }
-      // event.target.childNodes[1].style.display = "none"
-      
-    })
-    })
-    })
-    
   const refresh = () => {
 location.reload()
   }
