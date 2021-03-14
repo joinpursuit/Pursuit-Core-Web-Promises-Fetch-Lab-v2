@@ -1,0 +1,23 @@
+ul {
+  display: flex;
+  padding-left: 0;
+  flex: 30% 30% 30%;
+  flex-wrap: wrap;
+}
+
+li {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  width: 400px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* 
+p {
+    font-weight: normal;
+    font-size: 0;
+} */
