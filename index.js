@@ -1,8 +1,10 @@
+const reload = document.getElementById('reload')
+const container = document.getElementById('container')
 document.addEventListener('DOMContentLoaded', () => {
     jokeFunction()
+    reload.addEventListener('click',jokeFunction)
   })
   const jokeFunction = () => {
-    const container = document.getElementById('container')
     fetch('https://official-joke-api.appspot.com/random_ten')
     .then((res) => {
         if (!res.ok) {
@@ -11,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return res.json()
       })
       .then((jokes) => {
+        //   cards.textContent=""
         for (joke of jokes) {
             const cards = document.createElement('div')
             cards.className = 'card'
@@ -41,5 +44,4 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     
 } 
-const reload = document.getElementById('reload')
-reload.addEventListener('click',jokeFunction)
+
