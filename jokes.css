@@ -1,0 +1,15 @@
+h1 {
+    color: blue;
+}
+
+div {
+    border: solid black 2px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    gap: 5px;
+    grid-auto-rows: minmax(80px, auto);
+    
+}
