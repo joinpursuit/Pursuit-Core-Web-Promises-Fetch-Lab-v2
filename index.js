@@ -1,8 +1,7 @@
 const button = document.querySelector("#reload");
 let ul = document.querySelector("ul");
-button.addEventListener("click", (e) => {
-  e.preventDefault();
-  ul.innerHTML = ""
+
+const innitLoad = () =>{
   fetch("https://official-joke-api.appspot.com/random_ten")
     .then((res) => {
       if (!res.ok) {
@@ -29,5 +28,13 @@ button.addEventListener("click", (e) => {
         ul.appendChild(div);
       });
     });
+}
+
+innitLoad()
+
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  ul.innerHTML = ""
+  innitLoad()
 
 });
