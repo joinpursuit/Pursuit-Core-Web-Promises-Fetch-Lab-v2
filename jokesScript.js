@@ -11,9 +11,6 @@ let punch = document.querySelectorAll("h5");
 
 const test = document.querySelector("h1");
 
-
-
-
 button.addEventListener("click", (e) => {
 	// get 10 jokes from the API
 	fetch("https://official-joke-api.appspot.com/random_ten")
@@ -49,11 +46,29 @@ button.addEventListener("click", (e) => {
 		});
 });
 
-document.addEventListener("click", (e) => {
+
+//  document.querySelectorAll(".card").forEach((card) => {
+//      card.addEventListener("click", (event) => {
+//             event.target.style.color = "orange"
+		
+// 			test.style.color = "red";
+// 			punchline.style.color = "green";
+// 			h5.style.visibility = "visible";
+// 		});
+//  });
+
+// card is an array
+section.addEventListener("click", (e) => {
+    debugger
     const punchline = document.querySelector(".punchline")
-	test.style.color = "red";
-	console.log("Im in here");
-	punchline.style.color = "green";
+    if (e.target.className === "card") {
+        e.target.style.visibility = "visible";
+		}
+   
+    
+    test.style.color = "red";
+    punchline.style.color = "green";
+    	
 });
 
 
