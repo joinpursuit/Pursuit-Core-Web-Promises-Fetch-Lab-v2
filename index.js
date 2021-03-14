@@ -1,5 +1,4 @@
 const ul = document.querySelector("#joke-list");
-// const punchLine = [];
 
 const createJokes = () => {
   fetch("https://official-joke-api.appspot.com/random_ten")
@@ -12,31 +11,24 @@ const createJokes = () => {
     .then((res) => {
       res.forEach((joke) => {
         const li = document.createElement("li");
-        li.classList.add("card")
-        const p = document.createElement("p")
+        li.classList.add("card");
+        const p = document.createElement("p");
         p.textContent = joke.punchline;
-        p.innerText.fontsize(0);
+        p.style.display = "none";
         li.textContent = joke.setup;
         ul.appendChild(li);
-        li.appendChild(p)
-        debugger
+        li.appendChild(p);
       });
     })
     .catch((err) => {
       console.log(err);
     });
-  // console.log(punchLine);
 };
 createJokes();
 
-//  ul.addEventListener("click", (e) => {
-//    const li = e.target;
-//    li.childNodes[1].innerText.fontsize(2);
+ul.addEventListener("click", (e) => {
+  const li = e.target;
+  li.childNodes[1].style.display = "block";
+  debugger;
+});
 
-// li.children[0].style.fontSize = 14px
-//   //  debugger
-//   });
-  
-  
-//   @ index 1
-// innerhtml/innertextcontent
