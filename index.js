@@ -10,20 +10,28 @@ button.addEventListener("click", (e) => {
     }).then(res => {
         section.innerHTML = ""
         res.forEach(joke => {
-            const div=document.createElement("div")
-            div.classList.add("card")
-            const p1 = document.createElement("p");
-            p1.classList.add("p1")
-            p1.textContent = joke.setup;
+            const ul=document.createElement("ul")
+            ul.classList.add("card")
+            const li = document.createElement("li");
+            li.classList.add("joke")
+            li.textContent = joke.setup;
 
-            const p2 = document.createElement("p")
-            p2.classList.add("p2")
-            p2.textContent=joke.punchline
-            div.appendChild(p1)
-            div.appendChild(p2)
-            section.appendChild(div);
+            const p = document.createElement("p")
+            p.classList.add("punchline")
+            p.textContent=joke.punchline
+            ul.appendChild(li)
+            li.appendChild(p)
+            section.appendChild(ul);
             console.log(joke);
 
+            // const ul = document.querySelector(".card")
+            ul.addEventListener("click", (e) => {
+                if(p.style.visibility === "hidden") {
+                        p.style.visibility = "visible"
+                    } else {
+                        p.style.visibility = "hidden"
+                    }
+            })
         })
        
     }).catch(err => {
@@ -32,18 +40,23 @@ button.addEventListener("click", (e) => {
 
     });
 
-    section.addEventListener("click", (e) =>{
-        e.target.childNode.style.visibility = 'hidden'
+    // const ul = document.querySelector(".card")
+    // ul.addEventListener("click", (e) =>{
+        // e.target.childNode.childNode.style.visibility = 'hidden'
     // const p2=e.target.parentNode
     // e.tar
     // div or child user can click
     // change the second child to div 
-    //   if(p2.style.display === "none"){
+    // if(p.style.visibility === "hidden") {
+    //     p.style.visibility = "visible"
+    // } else {
+    //     p.style.visibility = "hidden"
+    // }
     //       p2.style.display = "block"
     //   } else {
     //       p2.style.display = "none"
     //   }
-  })
+//   })
 
 
 
