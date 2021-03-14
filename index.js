@@ -1,10 +1,10 @@
 const header = document.getElementById('header')
 const ul = document.querySelector('ul')
-const btn = document.getElementById('btn')
+const reload = document.getElementById('reload')
 
 header.textContent = 'Jokes!'
 ul.classList.add('card')
-btn.textContent = 'More Jokes!'
+reload.textContent = 'More Jokes!'
 
 const grab = () => {
     fetch('https://official-joke-api.appspot.com/random_ten')
@@ -18,11 +18,7 @@ const grab = () => {
 
             const li = document.createElement('li')
             li.textContent = card
-            
-            
-
             const p = document.createElement('p')
-            
             ul.appendChild(li)
             
             li.addEventListener('click', () => {
@@ -35,8 +31,9 @@ const grab = () => {
                 else { p.textContent = '' }
             }) 
         } //<---end of loop
-    })
+        })
 }
-btn.addEventListener('click', grab)
+grab()
+reload.addEventListener('click', grab)
 
 
