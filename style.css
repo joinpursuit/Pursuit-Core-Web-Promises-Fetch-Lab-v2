@@ -1,9 +1,21 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 p {
     visibility: hidden;
+
+}
+
+ul {
+    border: 2px solid black ;
+    width: 200px;
+    padding: 2%;
+    margin: 2%;
+    list-style: none;
+}
+
+li {
     
 }
-
-div{
-    border: 2px solid black ;
-}
-
