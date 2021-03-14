@@ -4,7 +4,7 @@ section {
 }
 
 .card {
-    display: grid;
+    display:grid;
     word-wrap: normal;
     height: 70px;
     border: 1px solid black;
@@ -14,5 +14,5 @@ section {
 }
 
 .punchline {
-    
+    font-weight: normal;
 }
