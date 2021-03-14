@@ -1,0 +1,16 @@
+#all-jokes{
+    display:flex;
+    flex-wrap: wrap;
+   
+}
+
+
+
+#cardie{
+    height:80px;
+    width: 200px;
+    border: black solid 3px;
+    padding: 9px;
+    margin: 8px;
+    white-space: pre-line;
+}
