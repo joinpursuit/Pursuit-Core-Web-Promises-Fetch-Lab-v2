@@ -1,7 +1,7 @@
 const reload = document.querySelector("#reload");
 let sectionJoke = document.querySelector(".joke-section");
 
-const loadJoke = () => {
+const loadJokes = () => {
   sectionJoke.innerHTML = "";
 
   fetch("https://official-joke-api.appspot.com/random_ten")
@@ -23,8 +23,8 @@ const loadJoke = () => {
         sectionJoke.appendChild(div);
         div.appendChild(jokeP);
         div.appendChild(punchlineP);
-        punchlineP.innerText = "";
         jokeP.innerText = `${joke.setup}`;
+        punchlineP.innerText = "";
 
         div.addEventListener("click", (e) => {
           if (punchlineP.innerText === "") {
@@ -33,13 +33,12 @@ const loadJoke = () => {
           } else {
             jokeP.innerText = `${joke.setup}`;
             punchlineP.innerText = "";
-            
           }
         });
       });
     });
 };
-loadJoke();
+loadJokes();
 reload.addEventListener("click", (e) => {
-  loadJoke();
+  loadJokes();
 });
