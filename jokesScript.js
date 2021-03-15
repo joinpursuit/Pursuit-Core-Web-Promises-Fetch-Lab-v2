@@ -7,22 +7,17 @@ let punch = document.querySelectorAll("h5");
 const option = document.querySelector("option");
 const select = document.querySelector("select");
 
-let selectValue = "programming"
+let selectValue = ""
 
 select.addEventListener("change", (e) => {
     selectValue = select.value;
-    console.log(selectValue);
 	return selectValue;
 });
-console.log(selectValue);
-button.addEventListener("click", (e, selectValue) => {
-    selectValue = "programming";
-console.log(selectValue);
-	
-	console.log(`https://official-joke-api.appspot.com/${selectValue}_ten`);
+
+button.addEventListener("click", (e) => {
+   	// fetch(`https://official-joke-api.appspot.com/${selectValue}_ten`)
 
 	fetch(`https://official-joke-api.appspot.com/random_ten`)
-	// fetch(`https://official-joke-api.appspot.com/${selectValue}_ten`)
 		.then((res) => {
 			if (!res.ok) {
 				throw Error("Something went wrong, status " + res.status);
@@ -67,6 +62,3 @@ section.addEventListener("click", (e) => {
 });
 
 
-
-// Have a select at the top for either
-// general, random, or programming and only load jokes of that type
