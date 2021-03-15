@@ -1,7 +1,8 @@
 const button = document.querySelector("#reload");
 let ul = document.querySelector("ul");
 const select = document.querySelector("select");
-let endPoint = "/*/ten"; // /ten -> for regu test specs and /*/ten -> for bonus secs
+let endPoint = "/ten"; // /ten -> for regu test specs and /*/ten -> for bonus secs
+let usedJokes = []
 const innitLoad = () => {
   ul.innerHTML = "";
   fetch(`https://official-joke-api.appspot.com/jokes${endPoint}`)
@@ -13,6 +14,9 @@ const innitLoad = () => {
     })
     .then((res) => {
       res.forEach((joke) => {
+        debugger;
+        jokeGrabber(joke);
+        debugger;
         const div = document.createElement("div");
         div.className = "card";
         const h2 = document.createElement("h2");
@@ -49,3 +53,11 @@ select.addEventListener("change", (e) => {
   }
   innitLoad()
 });
+const jokeGrabber = (joke) => {
+  if (usedJokes.includes(joke.id)) {
+    innitLoad()
+    debugger;
+  } else {
+    usedJokes.push(joke.id);
+  }
+};
