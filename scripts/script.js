@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json;
     }).then(random_ten => {
         for(let el of random_ten){
-            let cardCount = 0
             let main = document.querySelector("main")
             let card = document.createElement("div")
             card.className = "card"
