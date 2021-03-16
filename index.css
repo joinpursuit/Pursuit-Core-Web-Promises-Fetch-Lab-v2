@@ -1,12 +1,21 @@
-/* body {
+h1 {
+    font-weight: bold;
+    font-size:30px;
+    margin: 30px;
+    text-align: center;
+    grid-column: 2/3;
+}
+
+ul {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
-} */
+    grid-template-columns: repeat(3, .5fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: -20px;
+}
 
 .card {
     list-style: none;
-    border: 2px solid black;
+    border: solid black;
     padding: 10px;
-    width: 150px;
+    margin: 5px;
 }
