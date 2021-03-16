@@ -1,7 +1,7 @@
 const ul = document.querySelector("ul");
 const button = document.querySelector("button");
 
-const jokeFunction = () => {
+const jokeFunction = async () => {
     try {
         const res = await axios.get("https://official-joke-api.appspot.com/random_ten");
         res.data.forEach((joke) => {
