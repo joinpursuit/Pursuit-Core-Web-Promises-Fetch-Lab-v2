@@ -1,42 +1,42 @@
+// const { default: axios } = require("axios");
+
 const reload = document.querySelector("#reload");
 let sectionJoke = document.querySelector(".joke-section");
 
-const loadJokes = () => {
-  sectionJoke.innerHTML = "";
+const loadJokes = async () => {
+  try {
+    sectionJoke.innerHTML = "";
 
-  fetch("https://official-joke-api.appspot.com/random_ten")
-    .then((response) => {
-      // first response is my Response object
+    const res = await axios.get(
+      "https://official-joke-api.appspot.com/random_ten"
+    );
 
-      return response.json();
-    })
-    .then((res) => {
-      // the res with the JSON we want!
+    res.data.forEach((joke) => {
+      const div = document.createElement("div");
+      div.classList.add("card");
 
-      res.forEach((joke) => {
-        const div = document.createElement("div");
-        div.classList.add("card");
+      const jokeP = document.createElement("p");
+      const punchlineP = document.createElement("p");
 
-        const jokeP = document.createElement("p");
-        const punchlineP = document.createElement("p");
+      sectionJoke.appendChild(div);
+      div.appendChild(jokeP);
+      div.appendChild(punchlineP);
+      jokeP.innerText = `${joke.setup}`;
+      punchlineP.innerText = "";
 
-        sectionJoke.appendChild(div);
-        div.appendChild(jokeP);
-        div.appendChild(punchlineP);
-        jokeP.innerText = `${joke.setup}`;
-        punchlineP.innerText = "";
-
-        div.addEventListener("click", (e) => {
-          if (punchlineP.innerText === "") {
-            jokeP.innerText = `${joke.setup}`;
-            punchlineP.innerText = `${joke.punchline}`;
-          } else {
-            jokeP.innerText = `${joke.setup}`;
-            punchlineP.innerText = "";
-          }
-        });
+      div.addEventListener("click", (e) => {
+        if (punchlineP.innerText === "") {
+          jokeP.innerText = `${joke.setup}`;
+          punchlineP.innerText = `${joke.punchline}`;
+        } else {
+          jokeP.innerText = `${joke.setup}`;
+          punchlineP.innerText = "";
+        }
       });
     });
+  } catch (err) {
+    console.log(err);
+  }
 };
 loadJokes();
 reload.addEventListener("click", (e) => {
