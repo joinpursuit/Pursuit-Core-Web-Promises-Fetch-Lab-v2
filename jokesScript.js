@@ -27,7 +27,7 @@ button.addEventListener("click", (e) => {
 		.then((res) => {
 			// clear the old jokes
 			section.innerHTML = "";
-			console.log(res);
+			
 			// need to loop each joke
 			res.forEach((joke) => {
 				// create a p tag for each joke
@@ -52,12 +52,18 @@ button.addEventListener("click", (e) => {
 
 
 section.addEventListener("click", (e) => {
-  
-	if ((e.target.firstElementChild.style.visibility === "hidden")) {
-		e.target.firstElementChild.style.visibility = "visible"
+	 if ((e.target.firstElementChild.style.display !== "block")) {
+		e.target.firstElementChild.style.display = "block"
     } else {
-        e.target.firstElementChild.style.visibility = "hidden";
+        e.target.firstElementChild.style.display = "none";
     }
+
+  
+	// if ((e.target.firstElementChild.style.visibility !== "visible")) {
+	// 	e.target.firstElementChild.style.visibility = "visible"
+    // } else {
+    //     e.target.firstElementChild.style.visibility = "hidden";
+    // }
 
 });
 

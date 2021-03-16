@@ -1,6 +1,6 @@
 section {
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
+  
     grid-template-columns: repeat(3, 1fr);
     gap: 10px
 }
@@ -15,6 +15,6 @@ section {
 
 /* listen for click on card to change to visibility: visible */
 h5 {
-    visibility: hidden;
-   
+display: none;
+    /* visibility: hidden; */
 }
