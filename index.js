@@ -36,3 +36,4 @@ button.addEventListener("click", (e) => {
   ul.textContent = "";
   createJokes();
 });
+
