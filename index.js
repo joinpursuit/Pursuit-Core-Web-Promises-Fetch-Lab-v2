@@ -18,18 +18,13 @@
 // - Make a pull request on github.
 // - Submit the link to your pull request on Canvas.
 
-const fetchJokes = () => {
-  fetch(`https://official-joke-api.appspot.com/random_ten`)
-    .then((res) => {
-      if (!res.ok) {
-        throw Error("Something went wrong, status " + res.status);
-      }
-      return res.json();
-    })
-    .then((res) => {
+const fetchJokes = async (event) => {
+  try {
+  const res = await axios.get(`https://official-joke-api.appspot.com/random_ten`)
+    debugger;
       let allJokes = document.querySelector("#all-jokes");
       allJokes.innerHTML = "";
-      res.forEach((joke) => {
+      res.data.forEach((joke) => {
         const oneJokeDiv = document.createElement("div");
         let punchP = document.createElement("p");
         punchP.textContent = joke.punchline;
@@ -50,12 +45,13 @@ const fetchJokes = () => {
             }
         });
       });
-    });
+    }
+    catch(error) {
+      console.log(error)
+    }
 };
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  fetchJokes();
-});
+document.addEventListener("DOMContentLoaded",fetchJokes)
 
 let reloadButton = document.getElementById("reload");
 reloadButton.addEventListener("click", (event) => {
