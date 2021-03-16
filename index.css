@@ -1,0 +1,20 @@
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-left: 0px;
+}
+
+li {
+    border: 1px solid black;
+    margin: 5px;
+    width: 400px;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.punchline {
+    font-weight: normal;
+}
