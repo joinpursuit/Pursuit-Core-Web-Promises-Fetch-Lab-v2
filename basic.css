@@ -1,0 +1,24 @@
+
+ul {
+  display: flex;
+  padding-left: 0;
+  flex: 30% 30% 30%;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+li {
+  border: 1.5px solid grey;
+  margin: 5px;
+  padding: 5px;
+  width: 400px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.punchline {
+    font-weight: normal;
+    font-size: 14px;
+}
