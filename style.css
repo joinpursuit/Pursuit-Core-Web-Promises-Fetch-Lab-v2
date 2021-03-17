@@ -1,0 +1,36 @@
+p {
+    padding:0px;
+    margin: 0px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+}
+
+.card {
+    display:grid;
+    height: 100px;
+    border: 1px solid black;
+    margin: 5px;
+    position:relative;
+    
+}
+
+.joke-line {
+   height: auto;
+    padding: 5px;
+    font-weight: bold;
+    font-size: medium;
+    
+
+}
+
+.punchline {
+    font-weight: normal;
+    font-size: small;
+    padding: 5px;
+    position:absolute;
+    bottom: 5px;
+}

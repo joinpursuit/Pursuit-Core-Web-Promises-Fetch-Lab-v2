@@ -6,7 +6,7 @@ describe("Bonus", () => {
 
     cy.visit("./index_bonus.html");
 
-    cy.wait("@jokesBody");
+    // cy.wait("@jokesBody");
   });
 
   it("selects jokes from the general category when selected", () => {
