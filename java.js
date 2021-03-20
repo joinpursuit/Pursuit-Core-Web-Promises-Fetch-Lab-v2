@@ -1,7 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   let jokes = document.getElementById("jokes");
+  let button = document.getElementById("reload");
+  joker();
+  button.addEventListener("click", (event) => {
+    let loading = document.getElementById("loading");
+    loading.textContent = "Loading...";
+    removeAll(jokes);
+    joker();
+  });
+});
+
+const joker = () => {
+  let jokes = document.getElementById("jokes");
   fetch("https://official-joke-api.appspot.com/jokes/ten").then((response) => {
     return response.json().then((body) => {
+      loading.textContent = "";
       body.forEach((joke) => {
         let card = document.createElement("li");
         card.setAttribute("class", "card");
@@ -19,4 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-});
+};
+
+const removeAll = (parent) => {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+};
