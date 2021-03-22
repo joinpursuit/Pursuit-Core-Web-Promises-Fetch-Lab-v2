@@ -1,0 +1,60 @@
+ul {
+  display: flex;
+  padding-left: 0;
+  flex: 30% 30% 30%;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+li {
+  border: 1.5px solid grey;
+  margin: 5px;
+  padding: 5px;
+  width: 400px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.punchline {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.setup {
+  font-family: omnes-narrow, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #220721;
+  font-size: 22px;
+}
+
+.card {
+  background-color: #8bbbae;
+  border-color: #220721;
+}
+
+h1 {
+  font-family: jubilat, serif;
+  font-weight: 600;
+  font-style: italic;
+  color: #220721;
+  font-size: 22px;
+}
+
+.punchline {
+  font-family: jubilat, serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 20px;
+  color: #220721;
+}
+
+#reload {
+  font-family: omnes-narrow, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  background-color: #220721;
+  border-color: #220721;
+  color: #8bbbae;
+}
