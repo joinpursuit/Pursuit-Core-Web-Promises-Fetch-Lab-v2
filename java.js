@@ -17,14 +17,17 @@ const joker = () => {
       loading.textContent = "";
       body.forEach((joke) => {
         let card = document.createElement("li");
+        let p1 = document.createElement("p");
         card.setAttribute("class", "card");
-        card.textContent = joke.setup;
+        p1.textContent = joke.setup;
+        p1.className = "first";
+        card.appendChild(p1);
         jokes.appendChild(card);
         let p = document.createElement("p");
         card.addEventListener("click", (event) => {
           if (p.textContent.length === 0) {
             p.textContent = joke.punchline;
-            event.target.appendChild(p);
+            card.appendChild(p);
           } else if (p.textContent.length > 0) {
             p.textContent = "";
           }
