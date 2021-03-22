@@ -10,6 +10,7 @@ const createJokes = async () => {
       ul.appendChild(li);
       li.classList.add("card");
       const setup = document.createElement("p");
+      setup.classList.add("setup");
       setup.textContent = joke.setup;
       li.appendChild(setup);
       const punchline = document.createElement("p");
