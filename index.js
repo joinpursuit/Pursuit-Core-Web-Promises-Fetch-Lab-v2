@@ -2,7 +2,7 @@ const button = document.querySelector("#reload");
 let ul = document.querySelector("ul");
 const select = document.querySelector("select");
 let endPoint = "/*/ten"; // /ten -> for regu test specs and /*/ten -> for bonus secs
-const innitLoad = () => {
+const innitLoad = async () => {
   ul.innerHTML = "";
   fetch(`https://official-joke-api.appspot.com/jokes${endPoint}`)
     .then((res) => {
