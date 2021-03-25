@@ -1,0 +1,12 @@
+/* .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+} */
+
+/* .class{
+    grid-column: 1/3;
+} */
+
+p{
+    display: none;
+}
