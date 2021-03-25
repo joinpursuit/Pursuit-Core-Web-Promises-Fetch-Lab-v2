@@ -19,7 +19,7 @@ function jokes(){
       section.appendChild(punchlines)
       displaySection.appendChild(section)
       
-      heading.addEventListener("click", ()=>{
+      section.addEventListener("click", ()=>{
         if(punchlines.style.display === "none"){
           punchlines.style.display = "block"
         }else{
