@@ -1,5 +1,4 @@
 const displaySection = document.querySelector(".container");
-document.querySelector("#reload").addEventListener("click", (jokes));
 
 
 function jokes(){
@@ -30,9 +29,13 @@ function jokes(){
     }
     
   })
-  displaySection.innerHTML = ''
-    
+  
 };
 
+jokes()
 
+document.querySelector("#reload").addEventListener("click", ()=>{
+  displaySection.innerHTML = ''
+  jokes()
+});
 
