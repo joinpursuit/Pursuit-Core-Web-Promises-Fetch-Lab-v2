@@ -2,6 +2,7 @@ const reload = document.getElementById('reload')
 const container = document.getElementById('container')
 document.addEventListener('DOMContentLoaded', () => {
     jokeFunction()
+      cards.innerHTML=""
     reload.addEventListener('click',jokeFunction)
   })
   const jokeFunction = () => {
@@ -13,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return res.json()
       })
       .then((jokes) => {
-        //   cards.textContent=""
         for (joke of jokes) {
             const cards = document.createElement('div')
             cards.className = 'card'
