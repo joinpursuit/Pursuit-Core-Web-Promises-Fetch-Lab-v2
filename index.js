@@ -1,56 +1,46 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
-const reloadButton = document.querySelector("#reloadBtn")
+  const reloadBtn = document.querySelector("#reload");
 
-
-
-    const jokesList = document.querySelector("ul")
-   // jokesList.removeChild("li")
-    let jokeObj = {}
-
-
-fetch("https://official-joke-api.appspot.com/random_ten")
-.then(response => {return response.json()}).then(body => {
-    const jokes = body
-    
-    for (let joke of jokes) {
-      const setup = joke.setup;
-      const punchline = joke.punchline;
-      jokeObj[setup] = punchline;
-
-      jokeCard = document.createElement("li");
-      jokeCard.textContent = setup;
-      jokeCard.className = "card";
-      jokesList.appendChild(jokeCard);
-
-      jokeCard.addEventListener("click", reveal())
-
-  
-    }
-   
-})
-
+  function getJokes() {
+    fetch("https://official-joke-api.appspot.com/random_ten")
+      .then((response) => {
+        if(!response.ok) {
+          throw Error
+        }
+        return response.json();
+      })
+      .then((jokes) => {
+     
+        const span = document.querySelector("span");
+        span.innerHTML = "";
       
-function reveal () {
-    secondLine = document.createElement("p")
-    secondLine.textContent = punchline
-    secondLine.className = "card-text-hide"
-    jokeCard.appendChild(secondLine)
-}
+        
+        for (let joke of jokes) {
+          const jokeCard = document.createElement("div");
+          jokeCard.className = "card";
+          const child = document.createElement("p")
+          child.textContent = joke.setup;
+          span.appendChild(jokeCard);
+          jokeCard.appendChild(child)
+          const punchline = document.createElement("p");
+          punchline.textContent = joke.punchline;
+          punchline.className = "hide";
+          jokeCard.appendChild(punchline);
 
+          jokeCard.addEventListener("click", () => {
+            punchline.classList.toggle("hide");
+          });
+        }
+      });
+  }
+  getJokes();
 
-
-
-
-
-
+  reloadBtn.addEventListener("click", () => {
+    console.log("reload btn clicked")
+    getJokes()
+  }
+);
 
 
 
 })
-
-
-
-
-
