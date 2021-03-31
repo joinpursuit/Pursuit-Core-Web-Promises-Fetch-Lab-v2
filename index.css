@@ -1,0 +1,12 @@
+
+div {
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    border: 2px solid gray;
+    margin: 10px;
+    color: white;
+}
+p {
+    visibility: hidden;
+}  
