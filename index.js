@@ -1,54 +1,43 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-
     const button = document.querySelector("#reload")
-    const ul = document.querySelector(".cards")
-
-    getJokes()
-
-    function getJokes() {
-        const ul = document.querySelector(".cards")
+    const jokeCards = document.querySelector(".cards")
+    theJoke()
+    function theJoke() {
+        const jokeCards = document.querySelector(".cards")
         fetch("https://official-joke-api.appspot.com/random_ten").then(response => {
             return response.json()
         }).then(body => {
             console.log(body)
             for (i = 0; i < 10; i++) {
-                let div = document.createElement("div")
-                div.classList.add('card')
-                div.setAttribute("type", "button")
-                ul.appendChild(div)
-                let setUpPara = document.createElement('p')
-                setUpPara.classList.add('setUp')
-                setUpPara.innerHTML = body[i].setup
-                div.appendChild(setUpPara)
-                let punchLinePara = document.createElement('p')
-                punchLinePara.classList.add('punchLine')
-                punchLinePara.innerHTML = body[i].punchline
-                div.appendChild(punchLinePara)
+                let jokeCard = document.createElement("jokeCard")
+                jokeCard.classList.add('card')
+                jokeCard.setAttribute("type", "button")
+                jokeCards.appendChild(jokeCard)
+                let paraDetail = document.createElement('p')
+                paraDetail.classList.add('setUp')
+                paraDetail.innerHTML = body[i].setup
+                jokeCard.appendChild(paraDetail)
+                let joke = document.createElement('p')
+                joke.classList.add('punchLine')
+                joke.innerHTML = body[i].punchline
+                jokeCard.appendChild(joke)
 
-                 //create a button out of div
-                 div.addEventListener('click', (event) => {
-
-                    if (punchLinePara.style.visibility === "visible"){
-                        punchLinePara.style.visibility = "hidden"
+                 //create a button out of jokeCard
+                 jokeCard.addEventListener('click', (event) => {
+                    if (joke.style.visibility === "visible"){
+                        joke.style.visibility = "hidden"
                     }else{
-                        punchLinePara.style.visibility = "visible"
+                        joke.style.visibility = "visible"
                     }
                 })
             }
-            // const div2 = document.querySelector("div")
-            // const punchP = document.querySelector('.punchLine')
-            // div2.addEventListener('click', () => {
-            // console.log(punchP)
-            //     })
-
-
         })
 
     }
-
     button.addEventListener('click', (event) => {
-        ul.innerHTML = ''
-        getJokes()
+        jokeCards.innerHTML = ''
+        theJoke()
     })
 
 })
