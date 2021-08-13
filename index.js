@@ -1,6 +1,7 @@
 //A list of ten jokes that are randomly loaded when the page is refreshed, each with the `"card"` class
 const ul = document.querySelector("ul");
 const button = document.querySelector("#reload");
+
 const getJokes = () => {
   fetch("https://official-joke-api.appspot.com/random_ten")
     .then((res) => {
@@ -32,5 +33,5 @@ const getJokes = () => {
   
 });
 //A button with id `"reload"` that clears all the jokes on the screen and loads new random ones
-button.addEventListener("click", getJokes) 
+button.addEventListener("click", getJokes); 
 getJokes();
