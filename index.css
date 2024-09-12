@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+
+}
+
+h1 {
+    font-size: 4em;
+    font-family: fantasy;
+    text-decoration: 2px solid sienna underline;
+}
+
+button {
+    text-transform:uppercase;
+    color: sienna;
+    margin-bottom: 50px;
+    border-radius: 50%;
+    width: 30%;
+    height: 50px;
+    border-color: sienna;
+    outline: none;
+}
+
+div {
+    border: 5px dotted sienna; 
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    height: 300px;
+    flex-wrap: wrap;
+    margin: 20px;
+}
