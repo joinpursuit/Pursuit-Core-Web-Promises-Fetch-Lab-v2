@@ -1,0 +1,17 @@
+.joke-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.card {
+/* height: 5rem;
+width: auto;     */
+border-style: solid; 
+border-width: thin;
+padding-left: 3px;
+margin-top: 5px;
+
+} 
+
+
